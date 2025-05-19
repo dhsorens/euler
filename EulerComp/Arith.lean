@@ -135,3 +135,17 @@ def possible_sums (l1 l2 : List Nat) : List Nat :=
     []
 
 #eval possible_sums [1, 2, 3] [4, 5, 6]
+
+
+-- counting combinations for the coin problem
+def count_sum_combinations (gas target : Nat) (coins : List Nat) : Nat :=
+  if gas = 0 then 0 else -- gas
+  if target = 0 then 1 else -- we have a valid path
+  match coins with
+    | [] => 0 -- coins = [], so our path was invalid
+    | c :: tl =>
+      -- excluding hd
+      count_sum_combinations (gas - 1) target tl +
+      -- including hd
+      if c > target then 0 else
+      count_sum_combinations (gas - 1) (target - c) coins

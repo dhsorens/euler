@@ -5,6 +5,12 @@ import EulerComp.Lists
 import EulerComp.Primes
 import EulerComp.Sequence
 
+-- PROBLEM 31
+-- 1p, 2p, 5p, 10p, 20p, 50p, £1 (100p), and £2 (200p).
+-- How many different ways can £2 (200p) be made using any number of coins?
+
+#eval count_sum_combinations gas 5 [5,2,1] -- should be 4
+#eval count_sum_combinations gas 5 [5,3,2,1] -- should be 6
 
 -- PROBLEM 23
 -- upper limit is 28123
