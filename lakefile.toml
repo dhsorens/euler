@@ -1,0 +1,10 @@
+name = "euler-comp"
+version = "0.1.0"
+defaultTargets = ["euler-comp"]
+
+[[lean_lib]]
+name = "EulerComp"
+
+[[lean_exe]]
+name = "euler-comp"
+root = "Main"
